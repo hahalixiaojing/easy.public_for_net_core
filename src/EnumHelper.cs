@@ -1,0 +1,26 @@
+
+
+namespace Easy.Public
+{
+    public static class EnumHelper
+    {
+        public static string GetText(int[] keys, string[] text, int currentKeys, string defaultText)
+        {
+            int index = -1 ;
+            for(var i = 0; i < keys.Length; i++)
+            {
+                if(currentKeys == keys[i])
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if(index == -1)
+            {
+                return defaultText;
+            }
+            return text[index];
+        }
+    }
+}
+
