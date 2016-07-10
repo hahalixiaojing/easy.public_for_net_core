@@ -17,17 +17,27 @@ namespace Easy.Public
             IsAppend = false,
             Sql = "WHERE"
         };
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void AppendWhere()
         {
             sqlSegments.Add(WHERE);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql"></param>
         public void Append(string sql)
         {
             this.Append(true, "", sql);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <param name="prepend"></param>
+        /// <param name="sql"></param>
         public void Append(bool condition, String prepend, String sql)
         {
             if (condition)
@@ -52,7 +62,10 @@ namespace Easy.Public
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public String Sql()
         {
             var sql = new StringBuilder();

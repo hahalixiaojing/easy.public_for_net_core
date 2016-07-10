@@ -4,8 +4,18 @@ using System.Text;
 
 namespace Easy.Public
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class StringHelper
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="isTrim"></param>
+        /// <returns></returns>
         public static String ToString(Object inputValue, String defaultValue, Boolean isTrim = true)
         {
             if (inputValue == null)
@@ -22,6 +32,12 @@ namespace Easy.Public
             }
             return inputValue.ToString();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Int32 ToInt32(Object inputValue, Int32 defaultValue)
         {
             if (inputValue == null)
@@ -40,6 +56,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Int32? ToInt32(Object inputValue, Int32? defaultValue)
         {
             if (inputValue == null)
@@ -57,6 +79,12 @@ namespace Easy.Public
             }
             return new Nullable<Int32>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Int64 ToInt64(Object inputValue, Int64 defaultValue)
         {
             if (inputValue == null)
@@ -75,6 +103,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Int64? ToInt64(Object inputValue, Int64? defaultValue)
         {
             if (inputValue == null)
@@ -92,6 +126,12 @@ namespace Easy.Public
             }
             return new Nullable<Int64>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Int16 ToInt16(Object inputValue, Int16 defaultValue)
         {
             if (inputValue == null)
@@ -110,6 +150,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Int16? ToInt16(Object inputValue, Int16? defaultValue)
         {
             if (inputValue == null)
@@ -127,6 +173,12 @@ namespace Easy.Public
             }
             return new Nullable<Int16>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Decimal ToDecimal(Object inputValue, Decimal defaultValue)
         {
             if (inputValue == null)
@@ -146,6 +198,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Decimal? ToDecimal(Object inputValue, Decimal? defaultValue)
         {
             if (inputValue == null)
@@ -164,6 +222,12 @@ namespace Easy.Public
             }
             return new Nullable<Decimal>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Single ToSingle(Object inputValue, Single defaultValue)
         {
             if (inputValue == null)
@@ -182,6 +246,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Single? ToSingle(Object inputValue, Single? defaultValue)
         {
             if (inputValue == null)
@@ -199,6 +269,12 @@ namespace Easy.Public
             }
             return new Nullable<Single>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Double ToDouble(Object inputValue, Double defaultValue)
         {
             if (inputValue == null)
@@ -218,6 +294,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Double? ToDouble(Object inputValue, Double? defaultValue)
         {
             if (inputValue == null)
@@ -236,6 +318,12 @@ namespace Easy.Public
             }
             return new Nullable<Double>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Boolean ToBoolean(Object inputValue, Boolean defaultValue)
         {
             if (inputValue == null)
@@ -253,6 +341,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static Boolean? ToBoolean(Object inputValue, Boolean? defaultValue)
         {
             if (inputValue == null)
@@ -270,6 +364,12 @@ namespace Easy.Public
             }
             return new Nullable<Boolean>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static DateTime ToDateTime(Object inputValue, DateTime defaultValue)
         {
             if (inputValue == null)
@@ -287,6 +387,12 @@ namespace Easy.Public
             }
             return convertResult;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static DateTime? ToDateTime(Object inputValue, DateTime? defaultValue)
         {
             if (inputValue == null)
@@ -304,16 +410,17 @@ namespace Easy.Public
             }
             return new Nullable<DateTime>(convertResult);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static T ToEnum<T>(String inputValue, T defaultValue)
         {
             Type enumType = typeof(T);
 
-#if NET451
-            if (!enumType.IsEnum)
-            {
-                return defaultValue;
-            }
-#endif
+
             if (String.IsNullOrWhiteSpace(inputValue))
             {
                 return defaultValue;
@@ -327,6 +434,12 @@ namespace Easy.Public
             }
             return defaultValue;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static T ToEnum<T>(Int32 value, T defaultValue)
         {
             Type enumType = typeof(T);

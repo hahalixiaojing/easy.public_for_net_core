@@ -5,6 +5,9 @@ using System.Net.NetworkInformation;
 using System.Linq;
 namespace Easy.Public
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class IpHelper
     {
         /// <summary>
@@ -15,6 +18,11 @@ namespace Easy.Public
         {
             string hostName = Dns.GetHostName();
             IPAddress[] addressList = System.Net.Dns.GetHostAddressesAsync(hostName).Result;
+            foreach(var a in addressList)
+            {
+                System.Console.WriteLine(a.ToString());
+            }
+
             return addressList.Where(m => m.AddressFamily == AddressFamily.InterNetwork)
                             .Select(m => m.ToString()).ToArray();
         }

@@ -27,10 +27,32 @@ namespace ConsoleApplication
 
             Console.WriteLine(sql.Sql());
 
-            Console.WriteLine("外网IP：" + IpHelper.InternetIp4()); 
-            Console.WriteLine("内网IP：" + IpHelper.IntranetIp4());
-            Console.WriteLine("look up：" + IpHelper.LoopbackIp());
-            
+            Console.WriteLine($"外网IP：{IpHelper.InternetIp4()}"); 
+            Console.WriteLine($"内网IP：{IpHelper.IntranetIp4()}");
+            Console.WriteLine($"look up：{ IpHelper.LoopbackIp()}");
+            Console.WriteLine("================");
+            foreach(var ip in IpHelper.Ip4List())
+            {
+                Console.WriteLine(ip);
+            }
+            int port = IpHelper.GetAvailablePort(IpHelper.IntranetIp4(),1000,9999);
+
+            Console.WriteLine($"this port is {port}");
+
+
+            int r = StringHelper.ToInt32("1",100);
+            Console.WriteLine($"int is {r}");
+            bool r2 = StringHelper.ToBoolean("true",false);
+            Console.WriteLine($"bool is {r2}");
+
+
+            string md5 = MD5Helper.Encrypt("123");
+            Console.WriteLine(md5);
+            string sha256 = SHA256Helper.Signature("123");
+            Console.WriteLine(sha256);
+
+           
+
         }
     }
 

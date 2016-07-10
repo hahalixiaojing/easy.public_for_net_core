@@ -4,9 +4,9 @@
     "李晓静"
   ],
   "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": false,
-    "outputName": "Easy.Public"
+    "outputName": "Easy.Public",
+    "warningsAsErrors": false,
+    "xmlDoc": true
   },
   "dependencies": {},
   "frameworks": {
@@ -16,18 +16,16 @@
         "System.Net.Primitives": "4.0.11",
         "System.Net.NameResolution": "4.0.0",
         "System.Net.NetworkInformation": "4.1.0",
-        "System.Security.Cryptography.Primitives": "4.0.0",
-        "System.Security.Cryptography.Algorithms": "4.2.0",
-        "System.Threading.Tasks": " 4.0.11",
+        // "System.Security.Cryptography.Primitives": "4.0.0",
+        // "System.Security.Cryptography.Algorithms": "4.2.0",
+        // "System.Threading.Tasks": " 4.0.11",
         "System.Data.Common": " 4.1.0",
         "System.Data.SqlClient": " 4.1.0",
         "Newtonsoft.Json": "9.0.1",
-        "CoreCompat.System.Configuration": "4.2.3-r4",
-        "System.Threading": "4.0.11",
+        // "System.Threading": "4.0.11",
         "System.Xml.XPath": "4.0.1",
         "System.Runtime": "4.1.0",
-        "System.ComponentModel": "4.0.1",
-        "System.Runtime.Serialization.Primitives": "4.1.1"
+        "Microsoft.Extensions.Configuration.CommandLine":"1.0.0"
       }
     }
   }

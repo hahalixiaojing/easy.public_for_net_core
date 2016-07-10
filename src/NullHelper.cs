@@ -23,6 +23,9 @@ namespace Easy.Public
             }
             return obj;
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public static R IfNull<T, R>(T obj, R returnValue, Func<T, R> func) where T : class
         {
             if (obj == null)

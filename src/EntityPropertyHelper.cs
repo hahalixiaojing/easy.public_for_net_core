@@ -12,8 +12,6 @@ namespace Easy.Public
         /// <summary>
         /// 设置属性值
         /// </summary>
-        /// <typeparam name="M">实例对象类型</typeparam>
-        /// <typeparam name="T">属性类型</typeparam>
         /// <param name="expression"></param>
         /// <param name="instance"></param>
         /// <param name="value"></param>
