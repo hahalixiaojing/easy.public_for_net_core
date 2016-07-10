@@ -6,7 +6,7 @@ using System.Linq;
 namespace Easy.Public
 {
     /// <summary>
-    /// 
+    /// 获得服务器IP地址帮助类，此类有BUG
     /// </summary>
     public static class IpHelper
     {

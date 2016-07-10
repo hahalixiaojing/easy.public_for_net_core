@@ -1,5 +1,9 @@
 ﻿using Easy.Public;
+using Easy.Public.Doc;
 using System;
+using System.IO;
+using System.Reflection;
+using System.Linq;
 
 namespace ConsoleApplication
 {
@@ -23,7 +27,7 @@ namespace ConsoleApplication
             var sql = new SQLBuilder();
             sql.AppendWhere();
             sql.Append(!string.IsNullOrWhiteSpace(q.Name), "and", "name=@name");
-            sql.Append(q.Id>0,"and","Id=@Id");
+            sql.Append(q.Id > 0, "and", "Id=@Id");
 
             Console.WriteLine(sql.Sql());
 
@@ -31,18 +35,18 @@ namespace ConsoleApplication
             Console.WriteLine($"内网IP：{IpHelper.IntranetIp4()}");
             Console.WriteLine($"look up：{ IpHelper.LoopbackIp()}");
             Console.WriteLine("================");
-            foreach(var ip in IpHelper.Ip4List())
+            foreach (var ip in IpHelper.Ip4List())
             {
                 Console.WriteLine(ip);
             }
-            int port = IpHelper.GetAvailablePort(IpHelper.IntranetIp4(),1000,9999);
+            int port = IpHelper.GetAvailablePort(IpHelper.IntranetIp4(), 1000, 9999);
 
             Console.WriteLine($"this port is {port}");
 
 
-            int r = StringHelper.ToInt32("1",100);
+            int r = StringHelper.ToInt32("1", 100);
             Console.WriteLine($"int is {r}");
-            bool r2 = StringHelper.ToBoolean("true",false);
+            bool r2 = StringHelper.ToBoolean("true", false);
             Console.WriteLine($"bool is {r2}");
 
 
@@ -51,8 +55,20 @@ namespace ConsoleApplication
             string sha256 = SHA256Helper.Signature("123");
             Console.WriteLine(sha256);
 
-           
 
+            var file = new System.IO.FileInfo(Path.Combine(AppContext.BaseDirectory, "Easy.Public.xml"));
+
+            XmlDoc doc = new XmlDoc(file);
+
+            string typeSummary = doc.ClassSummary(typeof(IpHelper));
+            Console.WriteLine(typeSummary);
+
+            Type type = typeof(IpHelper);
+            foreach(var m in type.GetMethods())
+            {
+                string text = doc.MethodSummary(m);
+                Console.WriteLine(text);   
+            }
         }
     }
 
