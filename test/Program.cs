@@ -3,11 +3,18 @@ using Easy.Public.Doc;
 using System;
 using System.IO;
 using System.Reflection;
-
+using Easy.Public.Logger;
 namespace ConsoleApplication
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             var test = new EntityPropertyHelperTest();
@@ -63,17 +70,47 @@ namespace ConsoleApplication
             Console.WriteLine(typeSummary);
 
             Type type = typeof(IpHelper);
-            foreach(var m in type.GetMethods())
+            foreach (var m in type.GetMethods())
             {
                 string text = doc.MethodSummary(m);
-                Console.WriteLine(text);   
+                Console.WriteLine(text);
             }
+
+            Type queryType = typeof(Query);
+
+            var file2 = new System.IO.FileInfo(Path.Combine(AppContext.BaseDirectory, "test.xml"));
+            XmlDoc queryDoc = new XmlDoc(file2);
+            var dic = queryDoc.AllFieldsSummary(queryType);
+
+            foreach (var item in dic)
+            {
+                Console.WriteLine(item.Key + "," + item.Value.Summary);
+            }
+
+            LogManager.Register(new PlainFileLogger());
+
+            LogManager.Info("tag","abc");
+
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     class Query
     {
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public bool Sex;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string Name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int Id { get; set; }
     }
 }
